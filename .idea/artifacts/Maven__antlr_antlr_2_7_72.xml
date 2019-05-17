@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact name="Maven: antlr:antlr:2.7.72">
+    <output-path>$PROJECT_DIR$/out/artifacts/Maven__antlr_antlr_2_7_72</output-path>
+    <root id="root" />
+  </artifact>
+</component>

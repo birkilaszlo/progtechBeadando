@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <Pane id="udvPane" fx:id="udvPane" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Button id="angolrolMagyarraButton" fx:id="angolrolMagyarraButton" layoutX="123.0" layoutY="172.0" mnemonicParsing="false" onAction="#tesztButtonAction" prefHeight="45.0" prefWidth="204.0" text="Angolról magyarra">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button id="magyarrolAngolraButton" fx:id="magyarrolAngolraButton" layoutX="473.0" layoutY="172.0" mnemonicParsing="false" onAction="#tesztButtonAction" prefHeight="45.0" prefWidth="204.0" text="Magyarról angolra">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button id="tanulasButton" fx:id="tanulasButton" layoutX="123.0" layoutY="306.0" mnemonicParsing="false" onAction="#learnButtonAction" prefHeight="45.0" prefWidth="204.0" text="Tanulás">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button id="ujSzoButton" fx:id="ujSzoButton" layoutX="473.0" layoutY="306.0" mnemonicParsing="false" onAction="#ujSzoButtonActon" prefHeight="45.0" prefWidth="204.0" text="Új szó rögzítése">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="69.0" prefHeight="45.0" prefWidth="800.0" text="Kérlek válassz a következő lehetőségek közül" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button id="kilepesButton" fx:id="kilepesButton" layoutX="71.0" layoutY="428.0" mnemonicParsing="false" onAction="#kilepesButtonAction" prefHeight="75.0" prefWidth="658.0" text="Kilépés">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Pane id="tesztPane" fx:id="tesztPane" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label layoutX="36.0" layoutY="42.0" text="Mit jelent a következő szó/kifejezés:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label id="questionLabel" fx:id="questionLabel" layoutX="36.0" layoutY="121.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <VBox layoutX="63.0" layoutY="191.0" prefHeight="242.0" prefWidth="597.0" spacing="40.0">
+               <children>
+                  <RadioButton id="answer1Radio" fx:id="answer1Radio" mnemonicParsing="false">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="answer2Radio" fx:id="answer2Radio" mnemonicParsing="false" toggleGroup="$group1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton id="answer3Radio" fx:id="answer3Radio" mnemonicParsing="false" toggleGroup="$group1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton id="answer4Radio" fx:id="answer4Radio" mnemonicParsing="false" toggleGroup="$group1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </VBox>
+            <HBox layoutX="258.0" layoutY="488.0" prefHeight="45.0" prefWidth="499.0" spacing="80.0">
+               <children>
+                  <Button id="mehetButton" fx:id="mehetButton" mnemonicParsing="false" onAction="#mehetButtonAction" prefHeight="45.0" prefWidth="204.0" text="Mehet">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button id="visszaButton" fx:id="visszaButton" mnemonicParsing="false" onAction="#visszaButtonAction" prefHeight="45.0" prefWidth="204.0" text="Vissza">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView id="isCorrectImageView" fx:id="isCorrectImageView" fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../pics/incorrect.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane id="ujSzoPane" fx:id="ujSzoPane" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="82.0" prefHeight="45.0" prefWidth="800.0" text="Új szó rögzítése:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <HBox layoutX="258.0" layoutY="487.0" prefHeight="45.0" prefWidth="499.0" spacing="80.0">
+               <children>
+                  <Button id="mehetButton1" fx:id="mehetButton1" mnemonicParsing="false" onAction="#createNewWordsButtonAction" prefHeight="45.0" prefWidth="204.0" text="Mehet">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button id="visszaButton1" fx:id="visszaButton1" mnemonicParsing="false" onAction="#visszaButtonAction" prefHeight="45.0" prefWidth="204.0" text="Vissza">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox layoutX="29.0" layoutY="206.0" prefHeight="127.0" prefWidth="120.0" spacing="40.0">
+               <children>
+                  <Label text="Angol">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Magyar">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="149.0" layoutY="206.0" prefHeight="127.0" prefWidth="539.0" spacing="52.0">
+               <children>
+                  <TextField id="englishWordField" fx:id="englishWordField" />
+                  <TextField id="hunWordField" fx:id="hunWordField" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane id="tanulasPane" fx:id="tanulasPane" prefHeight="600.0" prefWidth="800.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="77.0" prefHeight="45.0" prefWidth="800.0" text="Tanulás">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <VBox layoutX="51.0" layoutY="142.0" prefHeight="141.0" prefWidth="100.0" spacing="40.0">
+               <children>
+                  <Label text="Angol">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Magyar">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="181.0" layoutY="142.0" prefHeight="127.0" prefWidth="522.0" spacing="40.0">
+               <children>
+                  <Label id="englishLabel" fx:id="englishLabel">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label id="hunLabel" fx:id="hunLabel">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Button id="visszaButton2" fx:id="visszaButton2" layoutX="548.0" layoutY="472.0" mnemonicParsing="false" onAction="#visszaButtonAction" prefHeight="45.0" prefWidth="204.0" text="Vissza">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <HBox layoutX="564.0" layoutY="325.0" prefHeight="75.0" prefWidth="157.0" spacing="40.0">
+               <children>
+                  <Button id="next1Button" fx:id="next1Button" mnemonicParsing="false" onAction="#next1ButtonAction" prefHeight="40.0" prefWidth="34.0" />
+                  <Button id="next10Button" fx:id="next10Button" mnemonicParsing="false" onAction="#next10ButtonAction" prefHeight="40.0" prefWidth="34.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="97.0" layoutY="325.0" prefHeight="75.0" prefWidth="157.0" spacing="40.0">
+               <children>
+                  <Button id="prev10Button" fx:id="prev10Button" mnemonicParsing="false" onAction="#prev10ButtonAction" prefHeight="40.0" prefWidth="34.0" />
+                  <Button id="prev1Button" fx:id="prev1Button" mnemonicParsing="false" onAction="#prev1ButtonAction" prefHeight="40.0" prefWidth="34.0" />
+               </children>
+            </HBox>
+            <Label id="actualLabel" fx:id="actualLabel" alignment="CENTER" layoutX="310.0" layoutY="325.0" prefHeight="30.0" prefWidth="204.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="486.0" text="Keresés:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ChoiceBox id="searchChoiseBox" fx:id="searchChoiseBox" layoutX="175.0" layoutY="489.0" prefHeight="25.0" prefWidth="100.0" />
+            <Button id="runButton" fx:id="runButton" layoutX="310.0" layoutY="489.0" mnemonicParsing="false" onAction="#runButtonAction" text="ugrás" />
+         </children>
+      </Pane>
+      <Pane id="alertPane" fx:id="alertPane" layoutX="232.0" layoutY="340.0" prefHeight="185.0" prefWidth="341.0" visible="false">
+         <children>
+            <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d0d0d0" height="185.0" stroke="BLACK" strokeType="INSIDE" width="347.0" />
+            <Label id="alertLabel" fx:id="alertLabel" alignment="CENTER" layoutY="23.0" prefHeight="66.0" prefWidth="347.0" text="Nem jelölél be egy lehetőséget se" textAlignment="CENTER" textFill="#ed0e0e" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button id="backButton" fx:id="backButton" layoutX="133.0" layoutY="112.0" mnemonicParsing="false" onAction="#backButtonAction" text="Vissza" textFill="#ed0e0e">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,6 @@
+ # exclude everything except src, .settings, resources
+
+.classpath
+.project
+.settings/
+target/
